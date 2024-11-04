@@ -18,6 +18,10 @@ export class TodosService {
       ...todo,
     } as Todo;
   }
+
+  async deleteTodo(id: string) {
+    await delay(2000);
+  }
 }
 
 async function delay(ms: number) {
