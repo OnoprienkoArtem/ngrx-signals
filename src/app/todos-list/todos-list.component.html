@@ -14,7 +14,10 @@
 
 <mat-selection-list class="todos-list">
   @for(todo of store.todos(); track todo.id; let index = $index) {
-    <mat-list-option>
+    <mat-list-option
+      [selected]="todo.completed"
+      (selectedChange)="onTodoToggled(todo.id, $event)"
+    >
       <div class="todo-item">
         <mat-icon
           class="delete-todo"
@@ -22,7 +25,7 @@
         >
           delete
         </mat-icon>
-        <span>{{ todo.title }}</span>
+        <span [ngStyle]="{'text-decoration': todo.completed ? 'line-through' : 'none'}">{{ todo.title }}</span>
       </div>
     </mat-list-option>
   }

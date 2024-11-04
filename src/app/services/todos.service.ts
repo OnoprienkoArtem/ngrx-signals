@@ -22,6 +22,10 @@ export class TodosService {
   async deleteTodo(id: string) {
     await delay(2000);
   }
+
+  async updateTodo(id: string, completed: boolean) {
+    await delay(2000);
+  }
 }
 
 async function delay(ms: number) {
