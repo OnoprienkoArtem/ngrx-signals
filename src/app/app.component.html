@@ -4,6 +4,10 @@
     <h1>JavaScript Courses</h1>
   </div>
 
-  <todos-list />
+  @if (!store.loading()) {
+    <todos-list />
+  } @else {
+    <mat-spinner></mat-spinner>
+  }
 
 </div>

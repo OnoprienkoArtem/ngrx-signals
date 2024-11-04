@@ -27,4 +27,7 @@ export class TodosListComponent {
 
   store = inject(TodosStore);
 
+  async onAddTodo(title: string) {
+    await this.store.addTodo(title);
+  }
 }
